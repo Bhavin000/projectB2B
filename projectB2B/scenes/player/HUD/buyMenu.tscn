@@ -1,0 +1,122 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://script/buyMenu.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.188235, 0.188235, 0.188235, 0.392157 )
+
+[node name="buyMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="totalValue" type="Label" parent="Panel"]
+margin_left = 71.3524
+margin_top = 97.222
+margin_right = 111.352
+margin_bottom = 111.222
+text = "10000"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -200.0
+margin_right = 300.0
+margin_bottom = 200.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="0" type="Button" parent="Panel/Panel"]
+margin_left = 79.0
+margin_top = 62.0
+margin_right = 144.0
+margin_bottom = 82.0
+mouse_filter = 1
+text = "PISTOL1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1" type="Button" parent="Panel/Panel"]
+margin_left = 202.25
+margin_top = 62.0
+margin_right = 287.25
+margin_bottom = 82.0
+mouse_filter = 1
+text = "SHOTGUN1"
+
+[node name="2" type="Button" parent="Panel/Panel"]
+margin_left = 345.566
+margin_top = 59.0
+margin_right = 382.566
+margin_bottom = 79.0
+mouse_filter = 1
+text = "AR1"
+
+[node name="3" type="Button" parent="Panel/Panel"]
+margin_left = 420.566
+margin_top = 59.0
+margin_right = 485.566
+margin_bottom = 79.0
+mouse_filter = 1
+text = "SNIPER1"
+
+[node name="buyValue" type="Label" parent="Panel/Panel"]
+margin_left = 202.0
+margin_top = 414.0
+margin_right = 287.0
+margin_bottom = 449.0
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="close" type="Button" parent="Panel/Panel"]
+margin_left = 602.746
+margin_top = -30.778
+margin_right = 638.746
+margin_bottom = -2.778
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buyButton" type="Button" parent="Panel/Panel"]
+margin_left = 345.566
+margin_top = 413.839
+margin_right = 420.566
+margin_bottom = 448.839
+text = "BUY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Panel/Panel/0" to="." method="_on_0_pressed"]
+[connection signal="pressed" from="Panel/Panel/1" to="." method="_on_1_pressed"]
+[connection signal="pressed" from="Panel/Panel/2" to="." method="_on_2_pressed"]
+[connection signal="pressed" from="Panel/Panel/3" to="." method="_on_3_pressed"]
+[connection signal="pressed" from="Panel/Panel/close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Panel/Panel/buyButton" to="." method="_on_buyButton_pressed"]

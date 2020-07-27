@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://script/line3d.gd" type="Script" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+flags_unshaded = true
+albedo_color = Color( 0, 0.109804, 1, 1 )
+
+[node name="ImmediateGeometry" type="ImmediateGeometry"]
+material_override = SubResource( 1 )
+script = ExtResource( 1 )
+startThickness = 0.01
+endThickness = 0.01
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
